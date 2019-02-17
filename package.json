@@ -16,7 +16,7 @@
   "build": {
     "appId": "jp.elevenback.minimalytm",
     "mac": {
-      "icon": "assets/icon.icns"
+      "icon": "assets/mac/icon.icns"
     }
   },
   "dependencies": {
