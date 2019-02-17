@@ -9,6 +9,16 @@
 
 [![CircleCI](https://circleci.com/gh/potato4d/minimalytm.svg?style=svg)](https://circleci.com/gh/potato4d/minimalytm) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
+## About this product
+
+This is the smallest player on YouTube Music that supports cross platform.
+
+On your Mac or Windows toolbar and you can easily and fastly access YouTube Music.
+
+## Download
+
+Coming soon.
+
 ## How to development
 
 ```bash
