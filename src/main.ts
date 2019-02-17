@@ -1,8 +1,8 @@
 import { app, BrowserWindow, Menu, Tray } from 'electron'
+import { createMenuTemplate } from './menuTemplate'
 
-app.on('ready', function() {
+app.on('ready', () => {
   let mainWindow: BrowserWindow
-  let isVisible = false
 
   mainWindow = new BrowserWindow({
     width: 375,
@@ -22,7 +22,9 @@ app.on('ready', function() {
     mainWindow.hide()
   })
 
-  tray.setToolTip(app.getName())
+  Menu.setApplicationMenu(Menu.buildFromTemplate(createMenuTemplate(app)))
+
+  tray.setToolTip('Minimal YouTube Music Player')
   tray.on('click', () => {
     mainWindow.show()
   })
