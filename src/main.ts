@@ -1,6 +1,7 @@
 import { app, BrowserWindow, Menu, Tray } from 'electron'
 import { createMenuTemplate } from './ui/menuTemplate'
 import path from 'path'
+import { createContextTemplate } from './ui/contextTemplate'
 
 app.on('ready', () => {
   let mainWindow: BrowserWindow
@@ -28,5 +29,9 @@ app.on('ready', () => {
   tray.setToolTip('Minimal YouTube Music Player')
   tray.on('click', () => {
     mainWindow.show()
+  })
+
+  tray.on('right-click', () => {
+    tray.popUpContextMenu(Menu.buildFromTemplate(createContextTemplate(app)))
   })
 })

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contextTemplate createContextTemplate() 1`] = `
+Array [
+  Object {
+    "accelerator": "Command+Q",
+    "click": [Function],
+    "label": "Quit",
+  },
+]
+`;
