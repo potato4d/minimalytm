@@ -20,5 +20,6 @@ $ yarn start # Launch Electron
 ## How to build
 
 ```bash
+$ yarn build
 $ yarn dist
 ```
