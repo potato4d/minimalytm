@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`menuTemplate createMenuTemplate() 1`] = `
+Array [
+  Object {
+    "label": "Minimal YouTube Music Player",
+    "submenu": Array [
+      Object {
+        "label": "About this application",
+        "selector": "orderFrontStandardAboutPanel:",
+      },
+      Object {
+        "type": "separator",
+      },
+      Object {
+        "accelerator": "Command+Q",
+        "click": [Function],
+        "label": "Quit",
+      },
+    ],
+  },
+  Object {
+    "label": "Edit",
+    "submenu": Array [
+      Object {
+        "accelerator": "CmdOrCtrl+Z",
+        "label": "Undo",
+        "selector": "undo:",
+      },
+      Object {
+        "accelerator": "Shift+CmdOrCtrl+Z",
+        "label": "Redo",
+        "selector": "redo:",
+      },
+      Object {
+        "accelerator": "CmdOrCtrl+X",
+        "label": "Cut",
+        "selector": "cut:",
+      },
+      Object {
+        "accelerator": "CmdOrCtrl+C",
+        "label": "Copy",
+        "selector": "copy:",
+      },
+      Object {
+        "accelerator": "CmdOrCtrl+V",
+        "label": "Paste",
+        "selector": "paste:",
+      },
+      Object {
+        "type": "separator",
+      },
+      Object {
+        "accelerator": "CmdOrCtrl+A",
+        "label": "Select All",
+        "selector": "selectAll:",
+      },
+    ],
+  },
+]
+`;

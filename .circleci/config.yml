@@ -16,9 +16,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
       - run: yarn run -s format -l
-      - run:
-          name: Build
-          command: yarn build
+      - run: yarn test:coverage
+      - run: yarn build
   packaging:
     working_directory: ~/app
     docker:

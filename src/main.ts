@@ -1,5 +1,5 @@
 import { app, BrowserWindow, Menu, Tray } from 'electron'
-import { createMenuTemplate } from './menuTemplate'
+import { createMenuTemplate } from './ui/menuTemplate'
 import path from 'path'
 
 app.on('ready', () => {
