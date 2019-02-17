@@ -1,0 +1,22 @@
+{
+  "name": "minimalytm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/potato4d/minimalytm.git",
+  "author": "HANATANI Takuma <mail@potato4d.me>",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ./app/main.js",
+    "watch": "tsc --watch",
+    "format": "prettier './src/**/*.{js,ts}' --write"
+  },
+  "dependencies": {
+    "electron": "^4.0.5"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.6.10",
+    "@types/node": "^11.9.4",
+    "prettier": "^1.16.4",
+    "typescript": "^3.3.3"
+  }
+}
