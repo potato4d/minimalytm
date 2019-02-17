@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "electron ./app/main.js",
+    "build": "tsc",
     "watch": "tsc --watch",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
