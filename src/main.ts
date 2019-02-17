@@ -1,5 +1,6 @@
 import { app, BrowserWindow, Menu, Tray } from 'electron'
 import { createMenuTemplate } from './menuTemplate'
+import path from 'path'
 
 app.on('ready', () => {
   let mainWindow: BrowserWindow
@@ -15,7 +16,7 @@ app.on('ready', () => {
 
   mainWindow.loadURL('https://music.youtube.com')
 
-  const tray = new Tray(__dirname + '/../assets/icon_dark.png')
+  const tray = new Tray(path.join(__dirname, '../assets/icon_dark.png'))
   mainWindow.setPosition(tray.getBounds().x - 320 + 20, tray.getBounds().y)
 
   mainWindow.on('blur', () => {
