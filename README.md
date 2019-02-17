@@ -7,7 +7,7 @@
   </span>
 </p>
 
-[![CircleCI](https://circleci.com/gh/potato4d/minimalytm.svg?style=svg)](https://circleci.com/gh/potato4d/minimalytm) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![CircleCI](https://circleci.com/gh/potato4d/minimalytm.svg?style=svg)](https://circleci.com/gh/potato4d/minimalytm) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 ## About this product
 
@@ -33,3 +33,10 @@ $ yarn start # Launch Electron
 $ yarn build
 $ yarn dist
 ```
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://potato4d.me"><img src="https://github.com/potato4d.png" width="48px;" alt="HANATANI Takuma"/><br /><sub><b>HANATANI Takuma</b></sub></a><br /><a href="https://github.com/potato4d/minimalytm/commits?author=potato4d" title="Code">💻</a> <a href="https://github.com/potato4d/minimalytm/issues?q=author%3Apotato4d" title="Bug reports">🐛</a> <a href="#review-potato4d" title="Reviewed Pull Requests">👀</a> <a href="#question-potato4d" title="Answering Questions">💬</a></td><td align="center"><a href="https://himanoa.net/"><img src="https://github.com/himanoa.png" width="48px;" alt="himanoa"/><br /><sub><b>himanoa</b></sub></a><br /><a href="https://github.com/potato4d/minimalytm/commits?author=himanoa" title="Code">💻</a> <a href="https://github.com/potato4d/minimalytm/issues?q=author%3Ahimanoa" title="Bug reports">🐛</a></td></tr></table>
+<!-- ALL-CONTRIBUTORS-LIST:END -->

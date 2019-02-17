@@ -1,0 +1,36 @@
+{
+  "projectName": "minimalytm",
+  "projectOwner": "potato4d",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 48,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "potato4d",
+      "name": "HANATANI Takuma",
+      "avatar_url": "https://github.com/potato4d.png",
+      "profile": "https://potato4d.me",
+      "contributions": [
+        "code",
+        "bug",
+        "review",
+        "question"
+      ]
+    },
+    {
+      "login": "himanoa",
+      "name": "himanoa",
+      "avatar_url": "https://github.com/himanoa.png",
+      "profile": "https://himanoa.net/",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
