@@ -20,9 +20,9 @@
     }
   },
   "dependencies": {
-    "electron": "^4.0.5"
   },
   "devDependencies": {
+    "electron": "^4.0.5",
     "@types/electron": "^1.6.10",
     "@types/node": "^11.9.4",
     "electron-builder": "^20.38.5",
