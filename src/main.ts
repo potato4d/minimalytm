@@ -1,5 +1,8 @@
-import { app, BrowserWindow, Menu, Tray } from 'electron'
+import { app, BrowserWindow, Menu, Tray, screen } from 'electron'
 import { createMenuTemplate } from './ui/menuTemplate'
+import * as offsetCalclator from './tools/offsetCalclator'
+import * as Platform from './tools/platform'
+
 import path from 'path'
 import { createContextTemplate } from './ui/contextTemplate'
 
@@ -18,7 +21,14 @@ app.on('ready', () => {
   mainWindow.loadURL('https://music.youtube.com')
 
   const tray = new Tray(path.join(__dirname, '../assets/icon_dark.png'))
-  mainWindow.setPosition(tray.getBounds().x - 320 + 20, tray.getBounds().y)
+  const offset = offsetCalclator.getOffset()
+
+  if (Platform.isMacOS()) {
+    mainWindow.setPosition(
+      tray.getBounds().x - 375 + offset.x,
+      tray.getBounds().y + tray.getBounds().height + offset.y
+    )
+  }
 
   mainWindow.on('blur', () => {
     mainWindow.hide()
@@ -27,6 +37,51 @@ app.on('ready', () => {
   Menu.setApplicationMenu(Menu.buildFromTemplate(createMenuTemplate(app)))
 
   tray.setToolTip('Minimal YouTube Music Player')
+
+  if (Platform.isWindows()) {
+    mainWindow.setPosition(
+      0,
+      0
+    )
+    const trayBounds = tray.getBounds()
+    const displayBounds = screen.getPrimaryDisplay().bounds
+    const isTop = trayBounds.y === 0
+    const isLeft =
+      trayBounds.x < displayBounds.width / 2 &&
+      trayBounds.y + trayBounds.height !== displayBounds.height &&
+      !isTop
+    const isRight =
+      trayBounds.x > displayBounds.width / 2 &&
+      trayBounds.y + trayBounds.height !== displayBounds.height &&
+      !isTop
+    const isBottom = !isTop && !isRight && !isLeft
+
+    // FIXME: 本当にprimaryDisplay?
+    if (isLeft) {
+      mainWindow.setPosition(
+        trayBounds.x + trayBounds.height,
+        displayBounds.height - mainWindow.getBounds().height
+      )
+    } else if (isRight) {
+      mainWindow.setPosition(
+          trayBounds.x - 
+          mainWindow.getBounds().width -
+          offset.x,
+        displayBounds.height - mainWindow.getBounds().height
+      )
+    } else if (isTop) {
+      mainWindow.setPosition(
+        displayBounds.width - mainWindow.getBounds().width,
+        trayBounds.height
+      )
+    } else if (isBottom) {
+      mainWindow.setPosition(
+        displayBounds.width - mainWindow.getBounds().width,
+        displayBounds.height - trayBounds.height - mainWindow.getBounds().height
+      )
+    }
+  }
+
   tray.on('click', () => {
     mainWindow.show()
   })
