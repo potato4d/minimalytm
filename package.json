@@ -9,7 +9,15 @@
   "scripts": {
     "start": "electron ./app/main.js",
     "watch": "tsc --watch",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
     "format": "prettier './src/**/*.{js,ts}' --write"
+  },
+  "build": {
+    "appId": "jp.elevenback.minimalytm",
+    "mac": {
+      "icon": "assets/icon.icns"
+    }
   },
   "dependencies": {
     "electron": "^4.0.5"
@@ -17,6 +25,7 @@
   "devDependencies": {
     "@types/electron": "^1.6.10",
     "@types/node": "^11.9.4",
+    "electron-builder": "^20.38.5",
     "prettier": "^1.16.4",
     "standard-version": "^5.0.0",
     "typescript": "^3.3.3"
