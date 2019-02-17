@@ -12,7 +12,9 @@
     "watch": "tsc --watch",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "format": "prettier './src/**/*.{js,ts}' --write"
+    "format": "prettier './src/**/*.{js,ts}' --write",
+    "test": "jest --verbose",
+    "test:coverage": "jest --coverage"
   },
   "build": {
     "productName": "Minimal YouTube Music Player",
@@ -21,15 +23,17 @@
       "icon": "assets/mac/icon.icns"
     }
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "electron": "^4.0.5",
     "@types/electron": "^1.6.10",
+    "@types/jest": "^24.0.5",
     "@types/node": "^11.9.4",
+    "electron": "^4.0.5",
     "electron-builder": "^20.38.5",
+    "jest": "^24.1.0",
     "prettier": "^1.16.4",
     "standard-version": "^5.0.0",
+    "ts-jest": "^23.10.5",
     "typescript": "^3.3.3"
   }
 }
