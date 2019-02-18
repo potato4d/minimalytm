@@ -18,6 +18,7 @@ jobs:
       - run: yarn run -s format -l
       - run: yarn test:coverage
       - run: yarn build
+      - run: yarn codecov
   packaging:
     working_directory: ~/app
     docker:
