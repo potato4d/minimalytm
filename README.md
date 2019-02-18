@@ -7,7 +7,12 @@
   </span>
 </p>
 
-[![CircleCI](https://circleci.com/gh/potato4d/minimalytm.svg?style=svg)](https://circleci.com/gh/potato4d/minimalytm) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CircleCI](https://circleci.com/gh/potato4d/minimalytm.svg?style=flat-square)](https://circleci.com/gh/potato4d/minimalytm)
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg?style=flat-square)](https://github.com/facebook/jest)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![donate: Patreon](https://img.shields.io/badge/donate-patreon-orange.svg?style=flat-square)](https://www.patreon.com/potato4d)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-lightgrey.svg?style=flat-square)](#contributors)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 ## About this product
 

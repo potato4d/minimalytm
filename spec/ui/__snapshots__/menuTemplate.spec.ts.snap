@@ -10,6 +10,11 @@ Array [
         "selector": "orderFrontStandardAboutPanel:",
       },
       Object {
+        "accelerator": "CmdOrCtrl+W",
+        "label": "Close Window",
+        "role": "close",
+      },
+      Object {
         "type": "separator",
       },
       Object {
@@ -46,11 +51,6 @@ Array [
         "accelerator": "CmdOrCtrl+V",
         "label": "Paste",
         "selector": "paste:",
-      },
-      Object {
-        "accelerator": "CmdOrCtrl+W",
-        "label": "Close Window",
-        "selector": "close:",
       },
       Object {
         "type": "separator",
