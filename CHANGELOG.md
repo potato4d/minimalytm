@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.4.0](https://github.com/potato4d/minimalytm/compare/v0.3.0...v0.4.0) (2019-02-18)
+
+
+### Features
+
+* Auto-detected tray icon theme ([c1c25b5](https://github.com/potato4d/minimalytm/commit/c1c25b5))
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # [0.3.0](https://github.com/potato4d/minimalytm/compare/v0.2.0...v0.3.0) (2019-02-17)
 
 
