@@ -1,11 +1,18 @@
-import { app, BrowserWindow, Menu, Tray, screen } from 'electron'
+import {
+  app,
+  BrowserWindow,
+  Menu,
+  Tray,
+  screen,
+  systemPreferences
+} from 'electron'
 import { createMenuTemplate } from './ui/menuTemplate'
 import * as offsetCalclator from './tools/offsetCalclator'
 import * as PlatformResolver from './tools/platformResolver'
 import { getTrayPosition, TrayPosition } from './tools/getTrayPosition'
-
-import path from 'path'
+import { getNativeIconName } from './tools/getNativeIconName'
 import { createContextTemplate } from './ui/contextTemplate'
+import path from 'path'
 
 app.on('ready', () => {
   let mainWindow: BrowserWindow
@@ -21,7 +28,9 @@ app.on('ready', () => {
 
   mainWindow.loadURL('https://music.youtube.com')
 
-  const tray = new Tray(path.join(__dirname, '../assets/icon_dark.png'))
+  const tray = new Tray(
+    path.join(__dirname, '../assets', getNativeIconName(systemPreferences))
+  )
   const offset = offsetCalclator.getOffset()
 
   if (PlatformResolver.isMacOS()) {
