@@ -5,7 +5,7 @@ export function getOffset(): { x: number; y: number } {
     return { x: 0, y: 0 }
   }
   if (PlatformResolver.isMacOS()) {
-    return { x: 4, y: 4 }
+    return { x: 20, y: 4 }
   }
   if (PlatformResolver.isLinux()) {
     return { x: 0, y: 0 }

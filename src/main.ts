@@ -33,13 +33,6 @@ app.on('ready', () => {
   )
   const offset = offsetCalclator.getOffset()
 
-  if (PlatformResolver.isMacOS()) {
-    mainWindow.setPosition(
-      tray.getBounds().x - 375 + offset.x,
-      tray.getBounds().y + tray.getBounds().height + offset.y
-    )
-  }
-
   mainWindow.on('blur', () => {
     mainWindow.hide()
   })
@@ -94,6 +87,12 @@ app.on('ready', () => {
   }
 
   tray.on('click', () => {
+    if (PlatformResolver.isMacOS()) {
+      mainWindow.setPosition(
+        tray.getBounds().x - 375 + offset.x,
+        tray.getBounds().y + tray.getBounds().height + offset.y
+      )
+    }
     mainWindow.show()
   })
 
