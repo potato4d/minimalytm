@@ -48,6 +48,11 @@ Array [
         "selector": "paste:",
       },
       Object {
+        "accelerator": "CmdOrCtrl+W",
+        "label": "Close Window",
+        "selector": "close:",
+      },
+      Object {
         "type": "separator",
       },
       Object {

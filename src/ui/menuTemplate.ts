@@ -9,6 +9,7 @@ export function createMenuTemplate(app: App): MenuItemConstructorOptions[] {
           label: 'About this application',
           selector: 'orderFrontStandardAboutPanel:'
         } as any,
+        { label: 'Close Window', accelerator: 'CmdOrCtrl+W', role: 'close' },
         { type: 'separator' },
         {
           label: 'Quit',
