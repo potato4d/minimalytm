@@ -2,6 +2,7 @@ import { app, BrowserWindow, Menu, Tray, screen } from 'electron'
 import { createMenuTemplate } from './ui/menuTemplate'
 import * as offsetCalclator from './tools/offsetCalclator'
 import * as PlatformResolver from './tools/platformResolver'
+import { getTrayPosition, TrayPosition } from './tools/getTrayPosition'
 
 import path from 'path'
 import { createContextTemplate } from './ui/contextTemplate'
@@ -39,46 +40,47 @@ app.on('ready', () => {
   tray.setToolTip('Minimal YouTube Music Player')
 
   if (PlatformResolver.isWindows()) {
-    mainWindow.setPosition(
-      0,
-      0
-    )
+    mainWindow.setPosition(0, 0)
     const trayBounds = tray.getBounds()
     const displayBounds = screen.getPrimaryDisplay().bounds
-    const isTop = trayBounds.y === 0
-    const isLeft =
-      trayBounds.x < displayBounds.width / 2 &&
-      trayBounds.y + trayBounds.height !== displayBounds.height &&
-      !isTop
-    const isRight =
-      trayBounds.x > displayBounds.width / 2 &&
-      trayBounds.y + trayBounds.height !== displayBounds.height &&
-      !isTop
-    const isBottom = !isTop && !isRight && !isLeft
 
     // FIXME: 本当にprimaryDisplay?
-    if (isLeft) {
-      mainWindow.setPosition(
-        trayBounds.x + trayBounds.height,
-        displayBounds.height - mainWindow.getBounds().height
-      )
-    } else if (isRight) {
-      mainWindow.setPosition(
-          trayBounds.x -
-          mainWindow.getBounds().width -
-          offset.x,
-        displayBounds.height - mainWindow.getBounds().height
-      )
-    } else if (isTop) {
-      mainWindow.setPosition(
-        displayBounds.width - mainWindow.getBounds().width,
-        trayBounds.height
-      )
-    } else if (isBottom) {
-      mainWindow.setPosition(
-        displayBounds.width - mainWindow.getBounds().width,
-        displayBounds.height - trayBounds.height - mainWindow.getBounds().height
-      )
+    const trayPosition = getTrayPosition({ trayBounds, displayBounds })
+
+    switch (trayPosition) {
+      case TrayPosition.Left: {
+        mainWindow.setPosition(
+          trayBounds.x + trayBounds.height,
+          displayBounds.height - mainWindow.getBounds().height
+        )
+        break
+      }
+
+      case TrayPosition.Right: {
+        mainWindow.setPosition(
+          trayBounds.x - mainWindow.getBounds().width - offset.x,
+          displayBounds.height - mainWindow.getBounds().height
+        )
+        break
+      }
+
+      case TrayPosition.Top: {
+        mainWindow.setPosition(
+          displayBounds.width - mainWindow.getBounds().width,
+          trayBounds.height
+        )
+        break
+      }
+
+      case TrayPosition.Bottom: {
+        mainWindow.setPosition(
+          displayBounds.width - mainWindow.getBounds().width,
+          displayBounds.height -
+            trayBounds.height -
+            mainWindow.getBounds().height
+        )
+        break
+      }
     }
   }
 
