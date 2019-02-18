@@ -1,13 +1,13 @@
-import * as Platform from './platform'
+import * as PlatformResolver from './platformResolver'
 
 export function getOffset(): { x: number; y: number } {
-  if (Platform.isWindows()) {
+  if (PlatformResolver.isWindows()) {
     return { x: 0, y: 0 }
   }
-  if (Platform.isMacOS()) {
+  if (PlatformResolver.isMacOS()) {
     return { x: 4, y: 4 }
   }
-  if (Platform.isLinux()) {
+  if (PlatformResolver.isLinux()) {
     return { x: 0, y: 0 }
   }
   return { x: 0, y: 0 }

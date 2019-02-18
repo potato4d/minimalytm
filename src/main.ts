@@ -1,7 +1,7 @@
 import { app, BrowserWindow, Menu, Tray, screen } from 'electron'
 import { createMenuTemplate } from './ui/menuTemplate'
 import * as offsetCalclator from './tools/offsetCalclator'
-import * as Platform from './tools/platform'
+import * as PlatformResolver from './tools/platformResolver'
 
 import path from 'path'
 import { createContextTemplate } from './ui/contextTemplate'
@@ -23,7 +23,7 @@ app.on('ready', () => {
   const tray = new Tray(path.join(__dirname, '../assets/icon_dark.png'))
   const offset = offsetCalclator.getOffset()
 
-  if (Platform.isMacOS()) {
+  if (PlatformResolver.isMacOS()) {
     mainWindow.setPosition(
       tray.getBounds().x - 375 + offset.x,
       tray.getBounds().y + tray.getBounds().height + offset.y
@@ -38,7 +38,7 @@ app.on('ready', () => {
 
   tray.setToolTip('Minimal YouTube Music Player')
 
-  if (Platform.isWindows()) {
+  if (PlatformResolver.isWindows()) {
     mainWindow.setPosition(
       0,
       0
@@ -64,7 +64,7 @@ app.on('ready', () => {
       )
     } else if (isRight) {
       mainWindow.setPosition(
-          trayBounds.x - 
+          trayBounds.x -
           mainWindow.getBounds().width -
           offset.x,
         displayBounds.height - mainWindow.getBounds().height
