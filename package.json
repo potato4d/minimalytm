@@ -20,7 +20,10 @@
     "productName": "Minimal YouTube Music Player",
     "appId": "jp.elevenback.minimalytm",
     "mac": {
-      "icon": "assets/icon.icns"
+      "icon": "assets/icon.icns",
+      "extendInfo": {
+        "LSUIElement": 1
+      }
     },
     "win": {
       "icon": "assets/icon.ico",

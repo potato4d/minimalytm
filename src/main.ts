@@ -33,9 +33,9 @@ app.on('ready', () => {
 
   mainWindow.loadURL('https://music.youtube.com')
 
-  if (process.env.NODE_ENV !== 'production') {
-    mainWindow.webContents.openDevTools()
-  }
+  // if (process.env.NODE_ENV !== 'production') {
+  //   mainWindow.webContents.openDevTools()
+  // }
 
   const tray = new Tray(
     path.join(__dirname, '../assets', getNativeIconName(systemPreferences))
