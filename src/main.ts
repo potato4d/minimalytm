@@ -14,6 +14,7 @@ import { getTrayPosition, TrayPosition } from './tools/getTrayPosition'
 import { getNativeIconName } from './tools/getNativeIconName'
 import { createContextTemplate } from './ui/contextTemplate'
 import path from 'path'
+import { IPCEventNames } from './types/ipc'
 
 app.on('ready', () => {
   let mainWindow: BrowserWindow
@@ -26,11 +27,15 @@ app.on('ready', () => {
     resizable: false,
     show: false,
     webPreferences: {
-      preload: path.join(__dirname, './client.js')
+      preload: path.join(__dirname, './client/index.js')
     }
   })
 
   mainWindow.loadURL('https://music.youtube.com')
+
+  if (process.env.NODE_ENV !== 'production') {
+    mainWindow.webContents.openDevTools()
+  }
 
   const tray = new Tray(
     path.join(__dirname, '../assets', getNativeIconName(systemPreferences))
@@ -105,6 +110,14 @@ app.on('ready', () => {
   })
 
   globalShortcut.register('MediaPlayPause', () => {
-    mainWindow.webContents.send('play/pause')
+    mainWindow.webContents.send(IPCEventNames.PLAY_PAUSE)
+  })
+
+  globalShortcut.register('MediaPreviousTrack', () => {
+    mainWindow.webContents.send(IPCEventNames.PREV)
+  })
+
+  globalShortcut.register('MediaNextTrack', () => {
+    mainWindow.webContents.send(IPCEventNames.NEXT)
   })
 })
