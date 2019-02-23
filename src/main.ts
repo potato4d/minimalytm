@@ -4,7 +4,8 @@ import {
   Menu,
   Tray,
   screen,
-  systemPreferences
+  systemPreferences,
+  globalShortcut
 } from 'electron'
 import { createMenuTemplate } from './ui/menuTemplate'
 import * as offsetCalclator from './tools/offsetCalclator'
@@ -23,7 +24,10 @@ app.on('ready', () => {
     transparent: true,
     frame: false,
     resizable: false,
-    show: false
+    show: false,
+    webPreferences: {
+      preload: path.join(__dirname, './client.js')
+    }
   })
 
   mainWindow.loadURL('https://music.youtube.com')
@@ -98,5 +102,9 @@ app.on('ready', () => {
 
   tray.on('right-click', () => {
     tray.popUpContextMenu(Menu.buildFromTemplate(createContextTemplate(app)))
+  })
+
+  globalShortcut.register('MediaPlayPause', () => {
+    mainWindow.webContents.send('play/pause')
   })
 })
