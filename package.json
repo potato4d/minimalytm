@@ -1,6 +1,6 @@
 {
   "name": "minimalytm",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "app/main.js",
   "private": true,
   "repository": "ssh://git@github.com/potato4d/minimalytm.git",
