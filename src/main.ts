@@ -16,6 +16,8 @@ import { createContextTemplate } from './ui/contextTemplate'
 import path from 'path'
 import { IPCEventNames } from './types/ipc'
 
+import './tools/auto-update'
+
 app.on('ready', () => {
   let mainWindow: BrowserWindow
 

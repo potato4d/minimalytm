@@ -21,12 +21,22 @@
     "appId": "jp.elevenback.minimalytm",
     "mac": {
       "icon": "assets/icon.icns",
+      "publish": {
+        "provider": "s3",
+        "bucket": "minimalytm-binaries",
+        "region": "ap-northeast-1"
+      },
       "extendInfo": {
         "LSUIElement": 1
       }
     },
     "win": {
       "icon": "assets/icon.ico",
+      "publish": {
+        "provider": "s3",
+        "bucket": "minimalytm-binaries",
+        "region": "ap-northeast-1"
+      },
       "target": [
         {
           "target": "portable",
@@ -38,7 +48,11 @@
       ]
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/semver": "^6.0.0",
+    "electron-log": "^3.0.5",
+    "electron-updater": "^4.0.6"
+  },
   "devDependencies": {
     "@types/electron": "^1.6.10",
     "@types/jest": "^24.0.5",
