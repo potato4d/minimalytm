@@ -3,6 +3,10 @@
 exports[`contextTemplate createContextTemplate() 1`] = `
 Array [
   Object {
+    "label": "About this application",
+    "selector": "orderFrontStandardAboutPanel:",
+  },
+  Object {
     "accelerator": "Command+Q",
     "click": [Function],
     "label": "Quit",
